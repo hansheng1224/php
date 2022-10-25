@@ -28,7 +28,15 @@
     $year=(isset($_GET['y'])?$_GET['y']:date("Y"));
 
     $nextMonth=$month+1;
+    // if($nextMonth>=13){
+    //     $nextMonth=$nextMonth-12;
+    //     $year++;
+    // }
     $prevMonth=$month-1;
+    // if($prevMonth<=0){
+    //     $prevMonth=$prevMonth+12;
+    //     $year--;
+    // }
 
     $firstDay=$year.'-'.$month.'-1';
     $firstDayWeek=date("N",strtotime($firstDay));
@@ -57,9 +65,11 @@
     ?>
 
     <div style="display:flex;width:80%;justify-content:space-between;align-items:center">
-        <a href="?=2022&m=<?=$prevMonth;?>">上一個月</a>
+        <!-- <a href="?y=<?=$year;?>&m=<?=$prevMonth;?>">上一個月</a> -->
+        <a href="?2022&m=<?=$prevMonth;?>">上一個月</a>
         <h1><?=$year;?>年<?=$month;?>月份</h1>
-        <a href="?=2022&m=<?=$nextMonth;?>">下一個月</a>
+        <!-- <a href="?y=<?=$year;?>&m=<?=$nextMonth;?>">下一個月</a> -->
+        <a href="?2022&m=<?=$nextMonth;?>">下一個月</a>
     </div>
 
     <table>
