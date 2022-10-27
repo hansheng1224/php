@@ -130,11 +130,12 @@
                     echo "<td></td>";
                 }
             } else {
+                $dayNum = date('j', strtotime($day));
                 if ($i % 7 == 0 || $i % 7 == 6) {
-                    $dayNum = date('j', strtotime($day));
+                    // $dayNum = date('j', strtotime($day));
                     echo "<td style = 'background: pink'>$dayNum</td>";
                 } else {
-                    $dayNum = date('j', strtotime($day));
+                    // $dayNum = date('j', strtotime($day));
                     echo "<td>$dayNum</td>";
                 }
             }
@@ -153,6 +154,7 @@
         for ($j = $i; $j < ($weeks * 7 - 1); $j++) {
             if($j == ($weeks*7-2)){
                 echo "<td style = 'background: pink'></td>"; 
+                echo "</tr>";
             }else{
 
                 echo "<td></td>";
