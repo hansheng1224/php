@@ -124,7 +124,7 @@
 
             if ($day == '') {
                 if ($i== 0) {
-                    echo "<td style = 'background: pink'></td>";
+                    echo "<td style = 'background: pink;';></td>";
                 } else {
                     //     $dayNum='';
                     echo "<td></td>";
@@ -132,11 +132,20 @@
             } else {
                 $dayNum = date('j', strtotime($day));
                 if ($i % 7 == 0 || $i % 7 == 6) {
-                    // $dayNum = date('j', strtotime($day));
-                    echo "<td style = 'background: pink'>$dayNum</td>";
+                    if(date(strtotime($day))==date(strtotime("now"))){
+                        echo "<td style = 'background: #ccc'>$dayNum</td>";
+                    }else{
+
+                        // $dayNum = date('j', strtotime($day));
+                        echo "<td style = 'background: pink;color: red'>$dayNum</td>";
+                    }
                 } else {
+                    if(date(strtotime($day))==date(strtotime("now"))){
+                        echo "<td style = 'background: #ccc'>$dayNum</td>";
+                    }else{
                     // $dayNum = date('j', strtotime($day));
                     echo "<td>$dayNum</td>";
+                    }
                 }
             }
             // echo $day;
@@ -160,6 +169,8 @@
                 echo "<td></td>";
             }
         }
+        echo date(strtotime($day));
+        echo date(strtotime("now"));
         ?>
 
     </table>
