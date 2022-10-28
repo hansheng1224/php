@@ -132,16 +132,16 @@
             } else {
                 $dayNum = date('j', strtotime($day));
                 if ($i % 7 == 0 || $i % 7 == 6) {
-                    if(date(strtotime($day))==date(strtotime("now"))){
-                        echo "<td style = 'background: #ccc'>$dayNum</td>";
+                    if($day==date('Y-m-j',strtotime("now"))){
+                        echo "<td style = 'background: lighgray;color:blue;'>$dayNum</td>";
                     }else{
 
                         // $dayNum = date('j', strtotime($day));
                         echo "<td style = 'background: pink;color: red'>$dayNum</td>";
                     }
                 } else {
-                    if(date(strtotime($day))==date(strtotime("now"))){
-                        echo "<td style = 'background: #ccc'>$dayNum</td>";
+                    if($day==date('Y-m-j',strtotime("now"))){
+                        echo "<td style = 'background: lightgray;color: blue;'>$dayNum</td>";
                     }else{
                     // $dayNum = date('j', strtotime($day));
                     echo "<td>$dayNum</td>";
@@ -169,8 +169,7 @@
                 echo "<td></td>";
             }
         }
-        echo date(strtotime($day));
-        echo date(strtotime("now"));
+       
         ?>
 
     </table>
