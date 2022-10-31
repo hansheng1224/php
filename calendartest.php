@@ -13,12 +13,12 @@
         }
 
         body {
+            background-image: url(../123.jpg);
             display: flex;
             flex-wrap: wrap;
             /* align-items: center; */
             justify-content: center;
             margin: 30px auto;
-            background-image: url(../123.jpg);
         }
 
         table {
@@ -29,15 +29,22 @@
 
         table td {
 
+            
+            border: 2px solid #000;
+            /* padding: 3px 9px; */
+            width: 90px;
+            height: 70px;
+            text-align: center;
+        }
+
+        .btn{
             font-size: x-large;
             font-family: "標楷體";
             font-weight: bolder;
-            border: 2px solid #000;
-            padding: 3px 9px;
             width: 90px;
-            height: 40px;
-            text-align: center;
-          
+            height: 70px;
+            background-color: #fff;
+            border: 0;
         }
     </style>
 </head>
@@ -83,23 +90,15 @@
         $cal[] = date('Y-m-d', strtotime("+$i days", strtotime($firstDay)));
     }
 
-    // echo "<pre>";
-    // print_r($cal);
-    // echo "</pre>";
-
-    // echo "第一天" . $firstDay . "星期" . $firstDayWeek;
-    // echo "<br>";
-    // echo "該月共" . $monthDays . '天,最後一天是' . $lastDay;
-    // echo "月曆天數共" . ($monthDays + $spaceDays) . '天' . $weeks . "周";
-
+    
     ?>
 
     <div style="display:flex;width:60%;justify-content:space-around;align-items:center">
         <a href="?y=<?= $year; ?>&m=<?= $prevMonth; ?>">上一個月</a>
-        <!-- <a href="?2022&m=<?= $prevMonth; ?>">上一個月</a> -->
+     
         <h1><?= $year; ?>年<?= $month; ?>月份</h1>
         <a href="?y=<?= $year; ?>&m=<?= $nextMonth; ?>">下一個月</a>
-        <!-- <a href="?2022&m=<?= $nextMonth; ?>">下一個月</a> -->
+       
     </div>
     <!-- <?php
             echo $year . "<br>";
@@ -119,6 +118,9 @@
             <td style='background: pink'>六</td>
         </tr>
         <?php
+        function aa(){
+            echo "button test susses";
+           }
         foreach ($cal as $i => $day) {
             if ($i % 7 == 0) {
                 echo "<tr>";
@@ -128,50 +130,34 @@
                 if ($i== 0) {
                     echo "<td style = 'background: pink;';></td>";
                 } else {
-                    //     $dayNum='';
+                 
                     echo "<td></td>";
                 }
             } else {
                 $dayNum = date('j', strtotime($day));
                 if ($i % 7 == 0 || $i % 7 == 6) {
                     if($day==date('Y-m-j',strtotime("now"))){
-<<<<<<< HEAD
-                        echo "<td style = 'background: blue;'>$dayNum</td>";
-=======
-                        echo "<td style = 'background: lighgray;color:blue;'>$dayNum</td>";
->>>>>>> 59cb9d3df702a551178fbbf45f070ab48576be9d
+                        echo "<td ><button class='btn' onclick='fndMemo($dayNum)' style = 'background: lighgray;color:blue;' >$dayNum</button></td>";
                     }else{
 
-                        // $dayNum = date('j', strtotime($day));
-                        echo "<td style = 'background: pink;color: red'>$dayNum</td>";
+                        
+                        echo "<td><button class='btn' id='ibtn$dayNum'  style = 'background: pink;color: red'>$dayNum</button></td>";
                     }
-                
                 } else {
                     if($day==date('Y-m-j',strtotime("now"))){
-<<<<<<< HEAD
-                        echo "<td style = 'background: #ccc'>$dayNum</td>";
-=======
-                        echo "<td style = 'background: lightgray;color: blue;'>$dayNum</td>";
->>>>>>> 59cb9d3df702a551178fbbf45f070ab48576be9d
+                        echo "<td><button class='btn' id='ibtn$dayNum'  style = 'background: lightgray;color: blue;'>$dayNum</button></td>";
                     }else{
-                    // $dayNum = date('j', strtotime($day));
-                    echo "<td>$dayNum</td>";
+                   
+                    echo "<td><button class='btn' id='ibtn$dayNum' >$dayNum</button></td>";
                     }
                 }
-                
             }
-            // echo $day;
-            // echo "<br>";
-            // echo $dayNum;
-
-            // echo "<td>$day</td>";
+           
             if ($i % 7 == 6) {
                 echo "</tr>";
             }
         }
-        // echo $i;
-        // echo "<br>";
-        // echo $weeks;
+       
         for ($j = $i; $j < ($weeks * 7 - 1); $j++) {
             if($j == ($weeks*7-2)){
                 echo "<td style = 'background: pink'></td>"; 
@@ -181,16 +167,9 @@
                 echo "<td></td>";
             }
         }
-<<<<<<< HEAD
-        // echo date(strtotime($day));
-        // echo date(strtotime("now"));
-        // $today=date('Y-m-j',strtotime('now'));
-        // $chkDay=date('Y-m-j',strtotime($day);
-        // echo $today;
-        // echo $day;
-=======
-       
->>>>>>> 59cb9d3df702a551178fbbf45f070ab48576be9d
+        // echo "<button class='btn' style='color:red'>$dayNum</button>";
+       echo "ibtn$dayNum";
+
         ?>
 
     </table>
