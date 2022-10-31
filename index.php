@@ -14,6 +14,7 @@
     <li><a href="calendar.php">萬年曆</a></li>
     <li><a href="session.php">SESSION</a></li>
     <li><a href="cookie.php">COOKIE</a></li>
+    <li><a href="login2.php">會員登入-SESSION</a></li>
 </ul>
 </body>
 </html>

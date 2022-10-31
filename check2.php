@@ -1,7 +1,7 @@
 <?php
 session_start();
-$acc='abc';
-$pwd='123';
+$acc='hansheng';
+$pwd='1234';
 
 $formAcc=$_POST['acc'];
 $formPwd=$_POST['pwd'];

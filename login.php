@@ -34,7 +34,7 @@ if($showForm){
 ?>
     <form action="check.php" method="post">
         <div>帳號:<input type="text" name="acc" id=""></div>
-        <div>密碼:<input type="text" name="pw" id=""></div>
+        <div>密碼:<input type="text" name="pwd" id=""></div>
         <div><input type="submit" value="登入" id=""></div>
     </form>
 <?php

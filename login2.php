@@ -31,7 +31,10 @@ if(!isset($_SESSION['login'])){
 <?php
 }else{
     echo "登入成功";
-    echo "<a ref='center.php'>會員中心<?a>";
+    echo "<a href='center.php'>會員中心</a>";
+    echo "<a href='logout.php'>登出</a>";
+    // echo $formAcc;
+    echo $_SESSION['login'];
 }
 ?>
 </body>
